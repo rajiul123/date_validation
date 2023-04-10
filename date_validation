@@ -1,0 +1,32 @@
+day = int(input("Day: "))
+month = int(input("Month: "))
+year = int(input("Year: "))
+
+if year < 1582:
+    print("Error")
+else:
+    if month == 2:
+        if year % 4 == 0 and year % 100 != 0 or year % 400 == 0:
+            if day > 29:
+                print("Please enter a valid date")
+            else:
+                days_left = 29 - day
+                print(str(days_left) + " days left of this month")
+        else:
+            if day > 28:
+                print("Please enter a valid date")
+            else:
+                days_left = 28 - day
+                print(str(days_left) + " days left of this month")
+    elif month in [4, 6, 9, 11]:
+        if day > 30:
+            print("Please enter a valid date")
+        else:
+            days_left= 30 - day
+            print(str(days_left) + " days left of this month")
+    else:
+        if day > 31:
+            print("Please enter a valid date")
+        else:
+            days_left= 31 - day
+            print(str(days_left) + " days left of this month.")
